@@ -1,0 +1,8 @@
+ultralytics>=8.2.0
+pandas
+matplotlib
+tabulate
+opencv-python
+torch
+torchvision
+torchaudio

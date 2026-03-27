@@ -1,0 +1,12 @@
+--- YOLO Benchmarking Evaluation --- 
+
+Speed Winner: yolov8n.pt (Highest FPS)
+Quality Winner: yolov9c.pt (Highest Average Confidence)
+Stability Winner: yolov8n.pt (Lowest Variation in Object Count)
+Efficiency Winner: yolo11n.pt (Fewest Parameters)
+
+Evaluation Summary:
+--------------------
+- yolo11n.pt: avg 75.22 FPS with 0.53 confidence score.
+- yolov8n.pt: avg 84.06 FPS with 0.55 confidence score.
+- yolov9c.pt: avg 41.38 FPS with 0.59 confidence score.

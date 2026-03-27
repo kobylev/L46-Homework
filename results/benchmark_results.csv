@@ -1,0 +1,7 @@
+Model,Video,Avg Inference (ms),FPS,Total Detections,Avg Confidence,High Confidence Ratio,Consistency,Params (M)
+yolov8n.pt,Ambulance.mp4,11.479,87.112,4699,0.532,0.228,2.96,3.157
+yolov8n.pt,rome.mp4,12.346,80.998,40031,0.566,0.327,3.626,3.157
+yolov9c.pt,Ambulance.mp4,24.083,41.524,9671,0.559,0.243,3.196,25.591
+yolov9c.pt,rome.mp4,24.248,41.241,49387,0.621,0.428,3.859,25.591
+yolo11n.pt,Ambulance.mp4,15.255,65.551,4964,0.522,0.151,3.506,2.624
+yolo11n.pt,rome.mp4,11.78,84.889,42444,0.547,0.28,3.781,2.624
