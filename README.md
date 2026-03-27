@@ -84,12 +84,18 @@ This is the primary result set of the project, executed using **NVIDIA CUDA acce
 
 #### 1. Speed (FPS) Comparison
 ![FPS Comparison](results/fps_comparison.png)
+*   **Analysis**: The chart shows a massive performance gap between the **Nano** models (v8n, v11n) and the **Compact** model (v9c). 
+*   **The Difference**: **YOLOv11n** and **YOLOv8n** achieve 80+ FPS because they are designed with a shallow architecture and very few parameters (~2.6M - 3.1M). In contrast, **YOLOv9c** (~25.5M parameters) is nearly 10x larger. Its use of **GELAN** (Generalized Efficient Layer Aggregation Network) and **PGI** (Programmable Gradient Information) creates a much deeper computational graph, which improves accuracy but limits throughput to around 40 FPS on the same hardware.
 
 #### 2. Quality (Confidence) Comparison
 ![Confidence Comparison](results/confidence_comparison.png)
+*   **Analysis**: **YOLOv9c** is the clear winner in detection quality, especially in complex scenes.
+*   **The Difference**: Because YOLOv9c has a higher parameter count, it can learn more complex spatial features. Its **PGI** technology specifically addresses the "information bottleneck" that occurs in deeper networks, allowing it to maintain high confidence for small or partially occluded objects that Nano models might only detect with 50% certainty. **YOLO11n** shows a slight drop in raw confidence compared to v8n, but as seen in the qualitative frames, it often provides better localization (tighter boxes).
 
 #### 3. Stability (Consistency) Comparison
 ![Consistency Comparison](results/consistency_comparison.png)
+*   **Analysis**: This graph measures the Standard Deviation of object counts across frames (lower is better). **YOLOv8n** appears more "stable" here.
+*   **The Difference**: Higher-capacity models like **YOLOv9c** are highly sensitive; they detect distant objects that may appear and disappear as light changes or other objects move. This "flicker" in the background increases the consistency metric (StdDev). **YOLOv8n**, being less sensitive to tiny details, produces a more consistent (though less complete) count. The architectural jump in **YOLO11** introduces more advanced attention mechanisms which, while powerful, can lead to more dynamic detection thresholds between consecutive frames in its default configuration.
 
 ## Setup & Usage
 
